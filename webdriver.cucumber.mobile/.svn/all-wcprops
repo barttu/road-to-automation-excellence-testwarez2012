@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/testwarez/!svn/ver/3/webdriver.cucumber.mobile
+END
+pom.xml
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/testwarez/!svn/ver/5/webdriver.cucumber.mobile/pom.xml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/.project
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/.classpath
+END

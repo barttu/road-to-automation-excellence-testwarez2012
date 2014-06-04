@@ -1,0 +1,27 @@
+package com.fp.qa.testwarez.webdriver.cucumber.scenarios;
+
+import com.fp.qa.testwarez.webdriver.cucumber.driver.SharedDriver;
+import com.fp.qa.testwarez.webdriver.cucumber.pageobjects.HomePage;
+import com.fp.qa.testwarez.webdriver.cucumber.pageobjects.provider.PagesProvider;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
+
+public class HomePageActions extends PageActions {
+
+	public HomePageActions(SharedDriver driver, PagesProvider provider) {
+		super(driver, provider);
+	}
+
+	/*
+	 * Find locations matching your search term
+	 */
+	@When("^I search for (.*) from the home page$")
+	@Given("^I searched for (.*) from the home page$")
+	public void search(String term) {
+		HomePage homePage = getProvider().getHomePage();
+		homePage.load();
+		homePage.search(term);
+		getDriver().captureScreenshot();
+	}
+}

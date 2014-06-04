@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" tests="2">
+<testcase classname="As a user I want to find places and nearby stops" name="As a user I want to places matching my choice_2" time="24.469287">
+<system-out><![CDATA[When I search for Aldwych from the home page................................................passed
+Then the following list of matched places is returned............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="As a user I want to find places and nearby stops" name="As a user I want to places matching my choice_1" time="10.113809">
+<system-out><![CDATA[When I search for West Ham from the home page................................................passed
+Then the following list of matched places is returned............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,0 +1,31 @@
+10
+
+dir
+4
+http://127.0.0.1:90/svn/testwarez/webdriver.cucumber.mobile/src/test/resources/com/fp/qa/testwarez
+http://127.0.0.1:90/svn/testwarez
+
+
+
+2012-10-21T11:46:45.710917Z
+4
+bart
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+d159d277-d3d3-6740-a1c1-56fe1d172dd8
+
+webdriver
+dir
+

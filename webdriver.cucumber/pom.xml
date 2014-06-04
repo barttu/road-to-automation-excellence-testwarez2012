@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.fp.qa.testwarez</groupId>
+  <artifactId>webdriver.cucumber</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+		<env.test.browser>chrome</env.test.browser>
+		<env.test.version>22</env.test.version>
+		<env.test.platform>LINUX</env.test.platform>
+		<env.test.hub></env.test.hub>
+		<env.test.host>Mobile</env.test.host>
+		<run.test.tag>@mobile</run.test.tag>
+  </properties>
+	
+  <dependencies>
+	  	<dependency>
+	    	<groupId>org.seleniumhq.selenium</groupId>
+	    	<artifactId>selenium-java</artifactId>
+	    	<version>2.25.0</version>
+	      	<scope>test</scope>
+	  	</dependency>
+	  	
+		<dependency>
+			<groupId>com.opera</groupId>
+			<artifactId>operadriver</artifactId>
+			<version>0.18</version>
+			<scope>test</scope>
+		</dependency>
+	  
+	  	<dependency>
+	      	<groupId>junit</groupId>
+	      	<artifactId>junit</artifactId>
+	     	<version>4.8.1</version>
+	      	<scope>test</scope>
+		</dependency>
+        
+	  	<dependency>
+    		<groupId>info.cukes</groupId>
+    		<artifactId>cucumber-java</artifactId>
+    		<version>1.1.1</version>
+    		<scope>test</scope>
+		</dependency>
+            
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>1.1.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.picocontainer</groupId>
+            <artifactId>picocontainer</artifactId>
+            <version>2.14.1</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+	
+  	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>java</goal>
+						</goals>
+						<configuration>
+							<classpathScope>test</classpathScope>
+							<mainClass>cucumber.api.cli.Main</mainClass>
+							<arguments>
+								<argument>--format</argument>
+								<argument>pretty</argument>
+								<argument>--format</argument>
+								<argument>html:reports/html</argument>
+								<argument>--format</argument>
+								<argument>json:reports/json/report.json</argument>
+								<argument>--format</argument>
+								<argument>junit:reports/junit/report.xml</argument>
+								<argument>--glue</argument>
+								<argument>com.fp.qa.testwarez.webdriver.cucumber</argument>
+								<argument>src/test/resources/</argument>
+								<argument>--tags</argument>
+								<argument>${run.test.tag}</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

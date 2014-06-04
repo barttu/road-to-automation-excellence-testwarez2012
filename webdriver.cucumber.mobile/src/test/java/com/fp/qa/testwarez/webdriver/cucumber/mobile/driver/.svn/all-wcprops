@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/src/test/java/com/fp/qa/testwarez/webdriver/cucumber/mobile/driver
+END
+SharedDriver.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/src/test/java/com/fp/qa/testwarez/webdriver/cucumber/mobile/driver/SharedDriver.java
+END
+CapabilitiesBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/src/test/java/com/fp/qa/testwarez/webdriver/cucumber/mobile/driver/CapabilitiesBuilder.java
+END
+DriverBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/testwarez/!svn/ver/4/webdriver.cucumber.mobile/src/test/java/com/fp/qa/testwarez/webdriver/cucumber/mobile/driver/DriverBuilder.java
+END

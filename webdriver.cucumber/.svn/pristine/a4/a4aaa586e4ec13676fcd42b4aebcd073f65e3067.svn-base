@@ -1,0 +1,255 @@
+package com.fp.qa.testwarez.webdriver.cucumber.scenarios;
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+
+import com.fp.qa.testwarez.webdriver.cucumber.driver.SharedDriver;
+import com.fp.qa.testwarez.webdriver.cucumber.pageobjects.provider.PagesProvider;
+
+import cucumber.annotation.en.Given;
+import cucumber.annotation.en.Then;
+import cucumber.annotation.en.When;
+
+/* 
+ * I contain scenarios of search feature
+ */
+public class ResultsPageActions extends PageActions {
+
+	// Counters
+	private static final int FIRST_ELEMENT = 0;
+
+	public ResultsPageActions(SharedDriver driver, PagesProvider provider) {
+		super(driver, provider);
+	}
+
+	/*
+	 * Compare matched places
+	 */
+	@Then("^the following list of matched places is returned$")
+	@Given("^the following list of matched places has been returned$")
+	public void comparePlaces(List<Place> expectedPlaces) {
+		List<Place> matchedPlaces = getProvider().getResultsPage().getPlaces(
+				expectedPlaces.size());
+		getDriver().captureScreenshot();
+		assertEquals(matchedPlaces, expectedPlaces);
+	}
+
+	/*
+	 * Compare nearby stops
+	 */
+	@Then("^the following list of nearby stops is returned$")
+	public void compareStops(List<Stop> expectedStops) {
+		List<Stop> matchedStops = getProvider().getResultsPage().getStops(
+				expectedStops.size());
+		getDriver().captureScreenshot();
+		assertEquals(matchedStops, expectedStops);
+	}
+
+	/*
+	 * Selects place of your choice
+	 */
+	@When("^I select the following place from the list$")
+	public void selectPlace(List<Place> tobeSelected) {
+		getProvider().getResultsPage().selectPlace(
+				tobeSelected.get(FIRST_ELEMENT));
+		getDriver().captureScreenshot();
+	}
+
+	/*
+	 * I'm a search result - nearby stop
+	 */
+	public class Stop {
+
+		// Name
+		public String stopname;
+		// Code
+		public String stopcode;
+		// Direction
+		public String towards;
+		// Route numbers, comma separated
+		public String routes;
+
+		// Click the place
+		private WebElement anchor;
+
+		public Stop() {
+		}
+
+		public String getStopname() {
+			return stopname;
+		}
+
+		public void setStopname(String stopname) {
+			this.stopname = stopname;
+		}
+
+		public String getStopcode() {
+			return stopcode;
+		}
+
+		public void setStopcode(String stopcode) {
+			this.stopcode = stopcode;
+		}
+
+		public String getTowards() {
+			return towards;
+		}
+
+		public void setTowards(String towards) {
+			this.towards = towards;
+		}
+
+		public String getRoutes() {
+			return routes;
+		}
+
+		public void setRoutes(String routes) {
+			this.routes = routes;
+		}
+
+		public WebElement getAnchor() {
+			return anchor;
+		}
+
+		public void setAnchor(WebElement anchor) {
+			this.anchor = anchor;
+		}
+
+		/*
+		 * Selects place
+		 */
+		public void select() {
+			anchor.click();
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result
+					+ ((routes == null) ? 0 : routes.hashCode());
+			result = prime * result
+					+ ((stopcode == null) ? 0 : stopcode.hashCode());
+			result = prime * result
+					+ ((stopname == null) ? 0 : stopname.hashCode());
+			result = prime * result
+					+ ((towards == null) ? 0 : towards.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Stop other = (Stop) obj;
+			if (routes == null) {
+				if (other.routes != null)
+					return false;
+			} else if (!routes.equals(other.routes))
+				return false;
+			if (stopcode == null) {
+				if (other.stopcode != null)
+					return false;
+			} else if (!stopcode.equals(other.stopcode))
+				return false;
+			if (stopname == null) {
+				if (other.stopname != null)
+					return false;
+			} else if (!stopname.equals(other.stopname))
+				return false;
+			if (towards == null) {
+				if (other.towards != null)
+					return false;
+			} else if (!towards.equals(other.towards))
+				return false;
+			return true;
+		}
+	}
+
+	/*
+	 * I'm a search result - place & location
+	 */
+	public class Place {
+
+		// Name of place
+		public String name;
+		// Post code of place
+		public String postcode;
+
+		// Click the stop
+		private WebElement anchor;
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getPostcode() {
+			return postcode;
+		}
+
+		public void setPostcode(String postcode) {
+			this.postcode = postcode;
+		}
+
+		public WebElement getAnchor() {
+			return anchor;
+		}
+
+		public void setAnchor(WebElement anchor) {
+			this.anchor = anchor;
+		}
+
+		public Place() {
+		}
+
+		/*
+		 * Selects place
+		 */
+		public void select() {
+			anchor.click();
+		}
+
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((name == null) ? 0 : name.hashCode());
+			result = prime * result
+					+ ((postcode == null) ? 0 : postcode.hashCode());
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Place other = (Place) obj;
+			if (name == null) {
+				if (other.name != null)
+					return false;
+			} else if (!name.equals(other.name))
+				return false;
+			if (postcode == null) {
+				if (other.postcode != null)
+					return false;
+			} else if (!postcode.equals(other.postcode))
+				return false;
+			return true;
+		}
+	}
+}

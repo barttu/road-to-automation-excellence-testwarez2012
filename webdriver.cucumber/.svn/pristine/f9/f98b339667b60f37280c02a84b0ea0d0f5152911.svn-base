@@ -1,0 +1,5 @@
+env.test.browser ${env.test.browser}
+env.test.version ${env.test.version}
+env.test.platform ${env.test.platform}
+env.test.hub ${env.test.hub}
+env.test.host ${env.test.host}

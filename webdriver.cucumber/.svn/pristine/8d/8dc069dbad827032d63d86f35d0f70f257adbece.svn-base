@@ -1,0 +1,330 @@
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri('com\fp\qa\testwarez\webdriver\cucumber\search.feature');
+formatter.feature({
+  "id": "as-a-user-i-want-to-find-places-and-nearby-stops",
+  "description": "",
+  "name": "As a user I want to find places and nearby stops",
+  "keyword": "Feature",
+  "line": 1
+});
+formatter.scenarioOutline({
+  "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice",
+  "tags": [
+    {
+      "name": "@web",
+      "line": 3
+    },
+    {
+      "name": "@mobile",
+      "line": 3
+    }
+  ],
+  "description": "",
+  "name": "As a user I want to places matching my choice",
+  "keyword": "Scenario Outline",
+  "line": 4,
+  "type": "scenario_outline"
+});
+formatter.step({
+  "name": "I search for \u003cplace\u003e from the home page",
+  "keyword": "When ",
+  "line": 5
+});
+formatter.step({
+  "name": "the following list of matched places is returned",
+  "keyword": "Then ",
+  "line": 6,
+  "rows": [
+    {
+      "cells": [
+        "name",
+        "postcode"
+      ],
+      "line": 7
+    },
+    {
+      "cells": [
+        "\u003cfirst-name\u003e",
+        "\u003cfirst-postcode\u003e"
+      ],
+      "line": 8
+    },
+    {
+      "cells": [
+        "\u003csecond-name\u003e",
+        "\u003csecond-postcode\u003e"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "\u003cthird-name\u003e",
+        "\u003cthird-postcode\u003e"
+      ],
+      "line": 10
+    },
+    {
+      "cells": [
+        "\u003cfourth-name\u003e",
+        "\u003cfourth-postcode\u003e"
+      ],
+      "line": 11
+    }
+  ]
+});
+formatter.examples({
+  "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places",
+  "description": "",
+  "name": "Places",
+  "keyword": "Examples",
+  "line": 13,
+  "rows": [
+    {
+      "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places;1",
+      "cells": [
+        "place",
+        "first-name",
+        "first-postcode",
+        "second-name",
+        "second-postcode",
+        "third-name",
+        "third-postcode",
+        "fourth-name",
+        "fourth-postcode"
+      ],
+      "line": 14
+    },
+    {
+      "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places;2",
+      "cells": [
+        "Aldwych",
+        "Aldwych (closed)",
+        "WC2R 1",
+        "Aldwych",
+        "WC2A 2",
+        "Aldwych Avenue",
+        "IG6 1",
+        "Aldwych Close",
+        "RM12 4"
+      ],
+      "line": 15
+    },
+    {
+      "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places;3",
+      "cells": [
+        "West Ham",
+        "West Ham",
+        "",
+        "West Ham Substation (WHAM)",
+        "E16 4",
+        "West Ham",
+        "E15 3",
+        "West Ham Lane",
+        "E15 4"
+      ],
+      "line": 16
+    }
+  ]
+});
+formatter.scenario({
+  "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places;2",
+  "tags": [
+    {
+      "name": "@web",
+      "line": 3
+    },
+    {
+      "name": "@mobile",
+      "line": 3
+    }
+  ],
+  "description": "",
+  "name": "As a user I want to places matching my choice",
+  "keyword": "Scenario Outline",
+  "line": 15,
+  "type": "scenario"
+});
+formatter.step({
+  "name": "I search for Aldwych from the home page",
+  "keyword": "When ",
+  "line": 5,
+  "matchedColumns": [
+    0
+  ]
+});
+formatter.step({
+  "name": "the following list of matched places is returned",
+  "keyword": "Then ",
+  "line": 6,
+  "matchedColumns": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "rows": [
+    {
+      "cells": [
+        "name",
+        "postcode"
+      ],
+      "line": 7
+    },
+    {
+      "cells": [
+        "Aldwych (closed)",
+        "WC2R 1"
+      ],
+      "line": 8
+    },
+    {
+      "cells": [
+        "Aldwych",
+        "WC2A 2"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "Aldwych Avenue",
+        "IG6 1"
+      ],
+      "line": 10
+    },
+    {
+      "cells": [
+        "Aldwych Close",
+        "RM12 4"
+      ],
+      "line": 11
+    }
+  ]
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "Aldwych",
+      "offset": 13
+    }
+  ],
+  "location": "HomePageActions.search(String)"
+});
+formatter.result({
+  "duration": 19539627070,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ResultsPageActions.comparePlaces(ResultsPageActions$Place\u003e)"
+});
+formatter.result({
+  "duration": 4929659739,
+  "status": "passed"
+});
+formatter.embedding('image/png','embedded0.png');
+formatter.embedding('image/png','embedded1.png');
+formatter.embedding('image/png','embedded2.png');
+formatter.scenario({
+  "id": "as-a-user-i-want-to-find-places-and-nearby-stops;as-a-user-i-want-to-places-matching-my-choice;places;3",
+  "tags": [
+    {
+      "name": "@web",
+      "line": 3
+    },
+    {
+      "name": "@mobile",
+      "line": 3
+    }
+  ],
+  "description": "",
+  "name": "As a user I want to places matching my choice",
+  "keyword": "Scenario Outline",
+  "line": 16,
+  "type": "scenario"
+});
+formatter.step({
+  "name": "I search for West Ham from the home page",
+  "keyword": "When ",
+  "line": 5,
+  "matchedColumns": [
+    0
+  ]
+});
+formatter.step({
+  "name": "the following list of matched places is returned",
+  "keyword": "Then ",
+  "line": 6,
+  "matchedColumns": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "rows": [
+    {
+      "cells": [
+        "name",
+        "postcode"
+      ],
+      "line": 7
+    },
+    {
+      "cells": [
+        "West Ham",
+        ""
+      ],
+      "line": 8
+    },
+    {
+      "cells": [
+        "West Ham Substation (WHAM)",
+        "E16 4"
+      ],
+      "line": 9
+    },
+    {
+      "cells": [
+        "West Ham",
+        "E15 3"
+      ],
+      "line": 10
+    },
+    {
+      "cells": [
+        "West Ham Lane",
+        "E15 4"
+      ],
+      "line": 11
+    }
+  ]
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "West Ham",
+      "offset": 13
+    }
+  ],
+  "location": "HomePageActions.search(String)"
+});
+formatter.result({
+  "duration": 724427756,
+  "status": "passed"
+});
+formatter.match({
+  "location": "ResultsPageActions.comparePlaces(ResultsPageActions$Place\u003e)"
+});
+formatter.result({
+  "duration": 9389380969,
+  "status": "passed"
+});
+formatter.embedding('image/png','embedded3.png');
+formatter.embedding('image/png','embedded4.png');
+formatter.embedding('image/png','embedded5.png');
+});
